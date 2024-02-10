@@ -29,18 +29,7 @@ python3 audio_to_text.py --channel-name=$channe_name --limit=10
 python3 storage.py
 ```
 
-6. run server
+6. run server (for streamlit)
 ```
 sh run_server.sh
-```
-
-### to heroku
-```
-# docker system prune
-docker build --platform linux/amd64 -t askmeparenting .
-docker tag askmeparenting registry.heroku.com/ask-me-parenting-line-bot/web
-docker push registry.heroku.com/ask-me-parenting-line-bot/web
-heroku container:release web
-
-sh run_notifications.sh
 ```
