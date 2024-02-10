@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/sql:/docker-entrypoint-initdb.d
+      - /tmp/mysql:/var/lib/mysql
+
+  phpmyadmin:
+    depends_on:
+      - mysqldb
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8088:80
+    environment:
+      PMA_HOST: mysqldb
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}

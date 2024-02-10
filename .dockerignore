@@ -1,0 +1,2 @@
+# Exclude files under /data folder
+/data/*

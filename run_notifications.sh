@@ -1,0 +1,1 @@
+echo 'Job is done!' | terminal-notifier -sound default
