@@ -9,27 +9,27 @@ channe_name=imleaderkid
 python3 video_crawler.py --channel-name=$channe_name
 ```
 
-1. extract transcript and process, then save to text
+2. extract transcript and process, then save to text
 ```
 python3 transcript_to_text.py
 ```
 
-1. video to audio if no transcript
+3. video to audio if no transcript
 ```
 python3 video_to_audio.py --channel-name=$channe_name
 ```
 
-1. use api to get transcript for videos without transcript
+4. use api to get transcript for videos without transcript
 ```
 python3 audio_to_text.py --channel-name=$channe_name --limit=10
 ```
 
-1. save to local as persistent storage
+5. save to local as persistent storage
 ```
 python3 storage.py
 ```
 
-1. run server
+6. run server
 ```
 sh run_server.sh
 ```
