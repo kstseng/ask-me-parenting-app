@@ -34,12 +34,6 @@ python3 storage.py
 sh run_server.sh
 ```
 
-## Docker
-```
-docker build -t ask_me_parenting_bot .
-docker run -p 8501:8501 -v /Users/kstseng/Documents/kst/ask-me-parenting/db/chroma:/app/db/chroma askmeparenting
-```
-
 ### to heroku
 ```
 # docker system prune
